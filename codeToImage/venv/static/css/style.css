@@ -1,0 +1,252 @@
+.px {
+    /* https://on-ze.com/demo/css3-small-font/ */
+
+    /* fontによって文字サイズがある */
+    /* https://teratail.com/questions/180060 */
+    font-family: "メイリオ";
+    font-feature-settings: "fwid";
+    
+    line-height: 13px;/*行間*/
+    white-space: nowrap;
+    -webkit-transform:scale(0.3);
+    -moz-transform:scale(0.3);
+    -ms-transform:scale(0.3);
+    -o-transform:scale(0.3);
+    transform:scale(0.3);
+    font-weight: 800;
+    letter-spacing: -0.20em; /*文字間隔*/
+
+    /* 余白を潰す処理 */
+    /* http://cqcq.sblo.jp/article/179242853.html */
+    -moz-transform-origin: 0px 0px;
+    -webkit-transform-origin: 0px 0px;
+    -o-transform-origin: 0px 0px;
+    -ms-transform-origin: 0px 0px;
+    transform-origin: 0px 0px;
+    vertical-align:top;
+}
+
+.cpx {
+    /* https://on-ze.com/demo/css3-small-font/ */
+
+    /* fontによって文字サイズがある */
+    /* https://teratail.com/questions/180060 */
+    font-family: "メイリオ";
+    font-feature-settings: "fwid";
+    
+    line-height: 13px;/*行間*/
+    white-space: nowrap;
+    -webkit-transform:scale(0.6);
+    -moz-transform:scale(0.6);
+    -ms-transform:scale(0.6);
+    -o-transform:scale(0.6);
+    transform:scale(0.6);
+    font-weight: 900;
+    letter-spacing: -0.60em; /*文字間隔*/
+
+    /* 余白を潰す処理 */
+    /* http://cqcq.sblo.jp/article/179242853.html */
+    -moz-transform-origin: 0px 0px;
+    -webkit-transform-origin: 0px 0px;
+    -o-transform-origin: 0px 0px;
+    -ms-transform-origin: 0px 0px;
+    transform-origin: 0px 0px;
+    vertical-align:top;
+}
+
+.vpx {
+    /* https://on-ze.com/demo/css3-small-font/ */
+
+    /* fontによって文字サイズがある */
+    /* https://teratail.com/questions/180060 */
+    font-family: "メイリオ";
+    font-feature-settings: "fwid";
+    
+    line-height: 10px;/*行間*/
+    white-space: nowrap;
+    -webkit-transform:scale(0.3);
+    -moz-transform:scale(0.3);
+    -ms-transform:scale(0.3);
+    -o-transform:scale(0.3);
+    transform:scale(0.3);
+    font-weight: 800;
+    letter-spacing: -0.70em; /*文字間隔*/
+
+    /* 余白を潰す処理 */
+    /* http://cqcq.sblo.jp/article/179242853.html */
+    -moz-transform-origin: 0px 0px;
+    -webkit-transform-origin: 0px 0px;
+    -o-transform-origin: 0px 0px;
+    -ms-transform-origin: 0px 0px;
+    transform-origin: 0px 0px;
+    vertical-align:top;
+}
+
+.main>h1 {
+    font-family: 'Bitter', serif;
+    font-size: 40px;
+    border-bottom: 1px solid #cccccc;
+    text-align: center;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+#headline {
+    font-family: 'Bitter', serif;
+}
+
+#header-title>p{
+    float: right;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+#header-item {
+    font-family: 'Bitter', serif;
+}
+
+.button {
+    border-radius: 5%;
+    transition: .3s;/*滑らかに変化*/
+}
+
+.button:hover {
+    box-shadow: 8px 8px #cccccc;
+    transform: translateY(-4px);
+    opacity:0.8;
+}
+
+#photograph .photograph-list{
+    text-align: center;
+}
+
+#photograph .photograph-list li {
+    /* float: left; */
+    display: inline-block;
+    list-style: none;
+    margin: 0 30px 30px 0;
+}
+
+.title {
+    text-align: left;
+    font-size: 17px;
+    margin-top: 5px;
+    font-family: 'Noto Serif JP', serif;
+    font-family: 'Shippori Mincho', serif;
+}
+
+.sub-info {
+    display: flex;
+    align-items: flex-start;
+    margin-top: -18px;
+}
+
+/* .sub-info > p {
+    float: left;
+    margin-top: -20px;
+    text-align: left;
+} */
+
+.date {
+    font-size: 13px;
+    font-weight: 100;
+}
+
+.author{
+    font-size: 13px;
+    margin-left: 5px;
+}
+
+.under-banner {
+    text-align: center;
+}
+
+.banner {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 30px 20px 10px 20px
+}
+
+.banner>li{
+    margin: 20px 20px 100px 20px;
+    font-family: 'Bitter', serif;
+    font-size: 20px;
+}
+
+.banner>li:hover{
+    opacity: 0.8;
+    padding-bottom: 3px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* a{
+    text-decoration: none;
+    background-color:cadetblue;
+    color: azure;
+    font-size: 20px;
+    font-family: 'Bitter',serif;
+    width: 130px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 5px;
+    border: 3px solid cadetblue;
+} */
+
+/* a:hover{
+    text-decoration: none;
+    background-color: azure;
+    color: cadetblue;
+} */
+
+/*ソースコードを選んでくださいの文章*/
+#src-code{
+    display: none;
+}
+
+/*ソースコード入力フォーム*/
+#code{
+    display: none;
+}
+
+#change{
+    display: none;
+}
+
+#copy{
+    display: none;
+}
+/*ロード中クラス*/
+#loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(216, 216, 216);
+    opacity:0.7;
+    transition: all 1s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+/*ロード完了クラス*/
+.loaded {
+    opacity: 0;
+    visibility: hidden;
+}
+#bg-video{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 50%;
+    min-height: 50%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    background: url('../css/images/load/keisuke.png') no-repeat;
+    background-size: cover;
+    }

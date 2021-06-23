@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- 画像がキャッシュされないように設定 -->
+    <!-- http://nopnop2002.webcrow.jp/flask_python/flask_python-6.html -->
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+    <link rel="icon" href="../static/css/images/icon/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&family=Shippori+Mincho&display=swap" rel="stylesheet">
+    <title>Photo Maker</title>
+
+    <!--head要素内にスタイルシートを記述する-->
+    <!--メディアクエリ-->
+    <style type="text/css">
+    .bs-component + .bs-component {
+        margin-top: 1rem;
+    }
+    /*メディアクエリ(スクリーンサイズが768px以下の時に適用)*/
+    @media (min-width: 768px) {
+        .bs-docs-section {
+            margin-top: 8em;
+        }
+        .bs-component {
+            position: relative;
+        }
+        .bs-component .modal {
+            position: relative;
+            top: auto;
+            right: auto;
+            bottom: auto;
+            left: auto;
+            z-index: 1;
+            display: block;
+        }
+        .bs-component .modal-dialog {
+            width: 90%;
+        }
+        .bs-component .popover {
+            position: relative;
+            display: inline-block;
+            width: 220px;
+            margin: 20px;
+        }
+        .nav-tabs {
+            margin-bottom: 15px;
+        }
+        .progress {
+            margin-bottom: 10px;
+        }
+    }
+</style>
+</head>
+
+<!--form action="/goRegist" id="conf" method="POST">
+    <p id="regist" class="regist"><a href="javascript:conf.submit()">Regist</a></p>
+</!--form-->
+
+<!--div style="text-align:center;">
+<font size="6"-->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a href="/" id="header-title" class="navbar-brand">
+                <img src="../static/css/images/header/header3.png" width="40" height="40" class="d-inline-block align-top mr-1">
+                <p>ImageHub</p>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul id="header-item" class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/view">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sign in</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sign up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<!--/font>
+</div-->
+
+<body>
+    {% block content %}{% endblock %}
+</body>
+
+</html>

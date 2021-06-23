@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+{% block content %}
+<!--roading中画面の生成-->
+<div id="loading">
+    <div class="loader">
+        <video src="../static/css/images/load/loading_keiskeF.mp4" poster="../static/css/images/load/keisuke.png" controls autoplay loop></video>
+    </div>
+</div>
+
+    <div id="tile-image">
+            <p id="tile" class="cpx">
+                {% for h in range(height|int) %}
+                    {% for w in range(width|int) %}
+                        {% set color = pixel_data[w|int + h|int * width|int]%}
+                        {% set code  = code_text[w|int + h|int * width|int]%}
+                        {% set sup = random_text[w|int + h|int * width|int]%}
+                        {% if code|length != 0 %}
+                            <span style="color:rgb({{color[0]}}, {{color[1]}}, {{color[2]}});">{{code}}</span>
+                        {% elif code|length == 0 %}
+                            <span style="color:rgb({{color[0]}}, {{color[1]}}, {{color[2]}});">{{sup}}</span>
+                        {% endif %}
+                    {% endfor %}
+                    <br>
+                {% endfor %}
+            </p>
+    </div>
+<div class="container">
+    <form action="/Regist" id="conf" method="POST">
+        <p class="lead">タイトル:<input type="text" required="required" class="form-control w-50" name="name" placeholder="タイトルを入力"></p>
+        <input type="hidden" id="picture" name="picture">
+        <div class="bs-component">
+            <a href="javascript:conf.submit()" class="btn btn-success"　id="regist" display="block">Regist</a>
+        </div>
+    </form>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+<script>
+
+    let heightSize = {{height|int}} * 8.0;
+    let widthSize = {{width|int}} * 8.0;
+    var imageLength = 0;
+
+    function productTileImage(){
+
+            html2canvas(document.querySelector('#tile-image'),{
+            // キャプチャ幅を変更する
+            width: widthSize*1.5,
+            // html2canvas のウィンドウ幅を変更する
+            windowWidth: widthSize*1.5,
+            // キャプチャ長さを変更する
+            height: heightSize*1.5
+
+        }).then((canvas) => {
+            
+            //アンカータグを作成
+            var a = document.createElement('a');
+            //canvasをJPEGに変換
+            var base64 = canvas.toDataURL('image/png');
+
+            imageLength = base64.length;//中身の長さを取得
+
+            console.log(base64);
+            //POST用に値をセッティング
+            document.getElementById('picture').value = base64;
+        })
+    }
+
+    //逐次処理で画像の読み込みを監視
+    let count = 0;
+    const loadingScene = document.getElementById('loading');
+    const countUp = () => {
+        console.log(imageLength);
+        const timeoutId = setTimeout(countUp, 1000);
+        if(imageLength != 0){　
+            clearTimeout(timeoutId);　//timeoutIdをclearTimeoutで指定している
+            console.log('読み込み完了');
+            loadingScene.classList.add('loaded');
+
+        }
+    }
+    countUp();
+
+    window.onload = productTileImage;
+
+    document.getElementById('tile-image').style.height = `${heightSize}px`;
+    document.getElementById('tile-image').style.width = `${widthSize}px`;
+
+</script>
+{% endblock %}
